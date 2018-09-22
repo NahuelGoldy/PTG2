@@ -1,0 +1,18 @@
+<nav class="sidebar" [ngClass]="{sidebarPushRight: isActive}">
+
+  <div style="text-align: center;">
+    <form >
+      <input class="form-control mr-sm-2" type="text" placeholder="Search"
+             id="typedinput" [(ngModel)]="typed" name="typedinput" #typedinput="ngModel" (input)="inputChanged()" />
+    </form>
+  </div>
+
+  <div *ngFor="let person of people">
+    <ul class="list-group">
+      <a class="list-group-item" (click)="personSelected(person)" *ngIf="!person.hide">
+        {{ person.name }}
+        <i class="fa fa-angle-double-right"></i>&nbsp;
+      </a>
+    </ul>
+  </div>
+</nav>

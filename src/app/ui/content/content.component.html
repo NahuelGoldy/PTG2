@@ -1,0 +1,104 @@
+<div>
+
+  <h1> {{peopleService.getSelectedPerson().name}}</h1>
+
+  <div class="row">
+    <div class="col-xs-12 col-lg-12">
+      <div class="card card-default content-table">
+        <div class="card-header card-info">
+          <i class="fa fa-info-circle"></i> Information
+        </div>
+        <div class="card-body">
+          <div class="row">
+            <div class="col-sm-4 col-lg-4 img-wrapper">
+              <div class="row">
+                <img src="{{peopleService.getSelectedPerson().img}}">
+              </div>
+              <div class="row">
+                <button type="button" class="btn btn-info" (click)="toggleMessageFormFlag()">{{btnText}}</button>
+              </div>
+            </div>
+            <div class="col-sm-8 col-lg-8">
+              <div class="row rating-wrapper">
+                <div class="col-sm-3 col-lg-3">
+                  <h6>Rating:</h6>
+                </div>
+                <div class="col-sm-9 col-lg-6">
+                  <i *ngFor="let h of counter(peopleService.getSelectedPerson().rating)" class="fa fa-heart"></i>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-12 col-lg-12">
+                  <p class="description">{{peopleService.getSelectedPerson().Description}}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="!showMessageForm" class="row">
+    <div class="col-xs-12 col-lg-6">
+      <div class="card card-default content-table">
+        <div class="card-header card-success">
+          <i class="fa fa-thumbs-up"></i> Likes
+        </div>
+        <table class="table table-bordered table-striped">
+          <tbody>
+          <tr *ngFor="let like of peopleService.getSelectedPerson().Likes" style="text-align: center;">
+            <td>{{like}}</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="col-xs-12 col-lg-6">
+      <div class="card card-default content-table">
+        <div class="card-header card-danger">
+          <i class="fa fa-thumbs-down"></i> Dislikes
+        </div>
+        <table class="table table-bordered table-striped">
+          <tbody>
+          <tr *ngFor="let dislike of peopleService.getSelectedPerson().Dislikes" style="text-align: center;">
+            <td>{{dislike}}</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+
+  <div *ngIf="showMessageForm" class="row">
+    <div class="col-xs-12 col-lg-6">
+
+      <form>
+        <label>Author: </label>
+        <input class="form-control mr-sm-2" type="text" placeholder="Your name (optional)"
+               id="author" [(ngModel)]="messageInput.author" name="author" #author="ngModel" />
+
+        <label>Message: </label>
+        <textarea class="form-control mr-sm-2" placeholder="Your message"
+                  id="message" [(ngModel)]="messageInput.message" name="message" #message="ngModel" >
+        </textarea>
+
+        <button id="btn-submit-msg" type="button" class="btn btn-success" (click)="submitMessage()">Submit</button>
+      </form>
+    </div>
+
+    <div class="col-xs-12 col-lg-6">
+      <div class="card card-default content-table">
+        <div class="card-header card-primary">
+          <i class="fa fa-comment"></i> Messages
+        </div>
+        <p *ngFor="let post of peopleService.getSelectedPerson().messages" >
+          <i></i> "{{post.message}}"
+          <span class="float-right text-muted small"><em>{{post.author}}, {{post.created_at | timeAgo}}</em></span>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

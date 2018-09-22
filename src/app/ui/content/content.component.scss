@@ -1,0 +1,108 @@
+
+.card-success,
+.card-danger,
+.card-primary,
+.card-info {
+  color: #fff;
+  font-weight: bold;
+}
+
+.content-item {
+  padding: 1%;
+}
+
+.content-table {
+  margin: 1%;
+}
+
+.table {
+  margin-bottom: 0;
+}
+
+.img-wrapper {
+  text-align: center;
+  .row {
+    display: contents;
+  }
+}
+
+.rating-wrapper {
+  padding: 5%;
+  text-align: center;
+
+  h6 {
+    padding-top: 2%;
+  }
+
+  i {
+    font-size: 2rem;
+    margin-right: 1%;
+    color: red;
+  }
+}
+
+h1 {
+  font-size: 2rem;
+  text-align: center;
+  font-family: "Segoe UI", sans-serif;
+}
+
+img {
+  border-radius: 10%;
+  margin: 3% 5%;
+}
+
+p {
+  margin: 1rem !important;
+}
+
+form {
+  padding: 0 5% 4% 5%;
+}
+
+label {
+  font-weight: 500;
+  margin-top: 3%;
+}
+
+#btn-submit-msg, label {
+  margin-top: 5%;
+  width: 100%;
+}
+
+//
+// Card style variations
+//
+
+.card-primary {
+  background-color: #0275d8;
+  border-color: #0275d8;
+  .card-header,
+  .card-footer {
+    background-color: transparent;
+  }
+}
+.card-success {
+  background-color: #5cb85c;
+  border-color: #5cb85c;
+  .card-header,
+  .card-footer {
+    background-color: transparent;
+  }
+}
+.card-info {
+  background-color: #17a2b8;
+  border-color: #17a2b8;
+  .card-header,
+  .card-footer {
+    background-color: transparent;
+  }
+}
+.card-danger {
+  background-color: #d9534f;
+  border-color: #d9534f;
+  .card-header,
+  .card-footer {
+    background-color: transparent;
+  }
+}

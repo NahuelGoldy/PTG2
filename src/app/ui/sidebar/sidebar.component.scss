@@ -1,0 +1,41 @@
+.sidebar{
+  border-radius: 0;
+  position: absolute;
+  z-index: 1000;
+  top: 55px;
+  left: 235px;
+  width: 235px;
+  height: 100%;
+  margin-left: -235px;
+  border: none;
+  border-radius: 0;
+  overflow-y: auto;
+  background-color: #222;
+  bottom: 0;
+  overflow-x: hidden;
+  padding-bottom: 40px;
+  .list-group{
+    a.list-group-item {
+      text-align: center;
+      background: #222;
+      border: 0;
+      border-radius: 0;
+      color: #fff;
+      text-decoration: none;
+      .fa {
+        margin-left: 2%;
+      }
+    }
+    a:hover {
+      background: lighten(#222, 15%);
+      color: #fff;
+      cursor: pointer;
+    }
+  }
+}
+@media screen and (max-width: 992px) {
+  .sidebar {
+    top: 54px;
+    left: 0px;
+  }
+}
